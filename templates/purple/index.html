@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L'infinite</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+</head>
+<body>
+
+    <div class="header">
+
+        <div class="header-div">
+
+            <p class="header-p"><a href="{{ index }}">Infinite's Bookstore</a></p>
+
+            <div class="header-panel">
+                <ul class="short-menu">
+                    <li>Top most reads</li>
+                    <li>Reading list</li>
+                    <li>Contact us</li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="recomendations">
+        <div class="recomendations-div">
+            <h1>Recomendations</h1>
+            <hr>
+            <div class="recomendationsdiv-lib">
+                {% for libro in recomendados%}
+                    <div class="reco">
+                        <img src="{{ libro.img }}" alt="">
+                        <div class="reco-grid">
+                            <p>{{ libro.nombre }}</p>
+                            <p>Author: {{ libro.autor }}</p>
+                        </div>
+
+                    </div>
+                {% endfor %}
+            </div>
+            <hr>
+
+
+        </div>
+
+        <div class="entry">
+            <button class="header-b">Create entry</button>
+            <form class="formulario" action="/crear" method="post">
+
+                {% csrf_token %}
+
+                <div class="div-form">
+                    <label for="id">ID:</label>
+                    <input type="number" id="id" name="id" value="">
+                </div>
+
+                <div class="div-form">
+                    <label for="img">Image URL:</label>
+                    <input type="url" id="img" name="img" value="">
+                </div>
+
+                <div class="div-form">
+                    <label for="nombre">Name:</label>
+                    <input type="text" id="nombre" name="nombre" value="">
+                </div>
+
+                <div class="div-form">
+                    <label for="autor">Author:</label>
+                    <input type="text" id="autor" name="autor" value="">
+                </div>
+
+                <div class="div-form">
+                    <label for="fecha">Publishing date:</label>
+                    <input type="date" id="fecha" name="fecha" value="">
+                </div>
+
+                <input class="submit-btn" type="submit" value="Crear">
+
+            </form>
+        </div>
+
+    </div>
+    <div class="superlibro">
+        {% for libro in libros%}
+            <div class="libros">
+                <div class="subLibro">
+                    <img src="{{ libro.img }}" alt="">
+                    <div class="libro-grid">
+                        <p class="p1">{{ libro.nombre }}</p>
+                        <p class="p2">{{ libro.autor }}</p>
+                        <p class="p2">Published on {{ libro.fecha_publicacion }}</p>
+                    </div>
+                    <div class="btn-area">
+                        <button class="b1" type="button" onclick={{ editar_libro }}>Modify</button>
+                        <button class="b2" type="button" onclick={{ editar_libro }}>Delete</button>
+                    </div>
+
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+</body>
+</html>
