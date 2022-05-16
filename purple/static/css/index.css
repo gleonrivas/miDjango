@@ -237,14 +237,14 @@ body{
     color: #bfa7ec;
     font-family: Arial, serif;
     width: 25%;
-    height: 150px;
+    height: 160px;
 }
 .subLibro{
     justify-content: center;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
-    margin: 0;
+    margin: 0 auto 0 auto;
 }
 
 .libro-grid{
@@ -265,33 +265,34 @@ body{
 .subLibro img{
     width: 100px;
     border-radius: 20px;
+    margin-left: 5%;
 
 }
 .btn-area{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-around;
-    width: 20%;
+    justify-content: flex-start;
+    width: available;
 }
 
 .b1{
-    width: 100px;
-    border-radius: 20px;
-    height: 50px;
-    margin: 0 auto 0 auto;
-    padding: 10px 20px 10px 20px;
-    color: #4aa7ff;
-    border-color: rgba(240, 248, 255, 0.2);
+    width: 50px;
+    border-radius: 15px;
+    height: 20px;
+    padding: 5px 15px 5px 15px;
     background-color: rgba(240, 248, 255, 0.2) ;
+    text-decoration: none;
+    color: #4aa7ff;
+
 }
 .b2{
-    width: 100px;
-    border-radius: 20px;
-    height: 50px;
-    margin: 0 auto 0 auto;
-    padding: 10px 20px 10px 20px;
-    color: #ff033d;
-    border-color: rgba(240, 248, 255, 0.2);
+    width: 50px;
+    border-radius: 15px;
+    height: 20px;
+    padding: 5px 15px 5px 15px;
     background-color: rgba(240, 248, 255, 0.2) ;
+    text-decoration: none;
+    color: #ff033d;
+    margin-left: 5%;
 }

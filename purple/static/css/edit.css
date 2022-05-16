@@ -60,92 +60,61 @@ body{
     color: rgba(240, 248, 255, 0.75);
     list-style: none;
 }
-.header-b{
-    visibility: visible;
-    opacity: 1;
-    width: 150px;
-    margin: auto;
-    height: 60px;
-    border: none;
-    border-color: rgba(240, 248, 255, 0);
-    background-color: transparent;
-    backdrop-filter: blur(10px);
-    border-radius: 25px;
-    color: aliceblue;
-    transition: all 0.2s;
 
-}
-
-
-
-/*   BODY   */
-
-
-
-.recomendations{
+.container{
     display: flex;
-    flex-direction: row;
-}
-.recomendations h1{
-    color: #cdc6e1;
-    width: fit-content;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, fantasy;
-}
-.recomendations-div{
-    margin: 0 auto 0 auto;
-    width: 50%;
-}
-.recomendations hr{
-    width: 113%;
-    margin: 2% 0 2% 0;
-    color: #bfa7ec;
-    border-radius: 10px;
-    opacity: .6;
-}
-.recomendationsdiv-lib{
-    display: flex;
-    flex-direction: row;
-    width: 120%;
-}
-
-
-
-
-
-
-.entry{
-    width: 150px;
-    height: 60px;
-    margin: auto;
-    padding: 0;
-    font-size: 13px;
-    border: 1px solid rgba(240, 248, 255, 0.2);
-    background-color: rgba(240, 248, 255, 0.1) ;
-    border-radius: 25px;
-    color: aliceblue;
-    transition: all 0.5s;
-}
-.entry:hover{
-    width: 22%;
-    height: 390px;
-    margin: auto;
-}
-.entry:hover .formulario{
-    height: fit-content;
     width: auto;
-    opacity: 1;
-    display: flex;
+    margin: auto 10%;
+    color: #bfa7ec;
+    font-family: Arial, serif;
+    padding: 3%;
+    border-radius: 40px;
+    border:1px solid rgba(240, 248, 255, 0.2);
+    background-color: rgba(240, 248, 255, 0.1) ;
+    height: auto;
 }
-.entry:hover .header-b{
-    visibility: hidden;
-    opacity: 0;
-    height: 0;
-    padding: 0;
+.container1{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+.subcontainer1{
+    display: grid;
+    grid-column: 1;
+    grid-row: 3;
+    width: 56%;
+    margin-left: 5%;
+    margin-right: 0;
+    height: 60%;
+
+}
+
+.container1 > img{
+    width: 38%;
+    border-radius: 30px;
+    margin: auto;
+}
+.p1{
+    font-size: 30px;
+    height: fit-content;
+    color: aliceblue;
+}
+
+.p2{
+    height: fit-content;
+    width: 56%;
+    font-size: 14px;
     margin: 0;
 }
 
+.container2{
+    display: flex;
+    margin: auto;
+    width: 40%;
+    justify-content: center;
+}
 
 
 
@@ -154,9 +123,8 @@ body{
     padding: 0 25px 25px 25px;
     justify-content: space-between;
     transition: all 0.5s;
-    width: 0;
-    opacity: 0;
-    display: none;
+    margin: auto 5% auto 5%;
+    width: 90%;
 }
 .div-form{
     font-family: Arial, serif;
@@ -182,94 +150,4 @@ body{
     color: aliceblue;
     border-color: rgba(240, 248, 255, 0.2);
     background-color: rgba(240, 248, 255, 0.2) ;
-}
-
-.reco{
-    color: aliceblue;
-    display: flex;
-    flex-direction: row;
-    margin-right: 5%;
-    padding: 1%;
-    border: 1px solid rgba(240, 248, 255, 0.2);
-    background-color: rgba(240, 248, 255, 0.1) ;
-    border-radius: 20px;
-
-}
-
-.reco p {
-    font-family: Arial, serif;
-    font-size: 10px;
-    margin-top: 4%;
-}
-
-.reco img{
-    width: 50px;
-    border-radius: 10px;
-}
-
-.reco-grid{
-    margin-left: 5%;
-    display: grid;
-    grid-column: 1;
-    grid-row: 2;
-    height: fit-content;
-}
-
-.superlibro{
-    display: flex;
-    flex-direction: row;
-    margin: 3%;
-    width: 90%;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.libros{
-    margin: 2% 0 2% 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 1%;
-    border: 1px solid rgba(240, 248, 255, 0.2);
-    background-color: rgba(240, 248, 255, 0.1) ;
-    border-radius: 30px;
-    color: #bfa7ec;
-    font-family: Arial, serif;
-    width: 25%;
-    height: 150px;
-}
-.subLibro{
-    justify-content: center;
-    display: flex;
-    flex-direction: row;
-    margin: auto 0 auto 0;
-}
-
-.libro-grid{
-    margin-left: 5%;
-}
-
-.p1{
-    font-size: 17px;
-    color: aliceblue;
-}
-.p2{
-    font-size: 12px;
-    color: #bfa7ec;
-}
-
-.subLibro img{
-    width: 100px;
-    border-radius: 20px;
-
-}
-
-.a1{
-    margin: 0 auto 0 auto;
-    display: flex;
-    border: 1px solid rgba(240, 248, 255, 0.2);
-    background-color: rgba(240, 248, 255, 0.1) ;
-    border-radius: 30px;
-    color: #bfa7ec;
-    font-family: Arial, serif;
 }

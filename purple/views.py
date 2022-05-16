@@ -49,19 +49,26 @@ def crear_recomendado(request):
         return redirect(index)
 
 
-def editar_libro(request):
+def editar_libro(request, id):
     if request.method == 'GET':
         libro = Libro.objects.get(id=id)
         return render(request, 'purple/edit.html', {'libro': libro})
 
     else:
-        libro_nuevo = Libro()
-        libro_nuevo.id = request.POST.get('id')
-        libro_nuevo.img = request.POST.get('img')
-        libro_nuevo.nombre = request.POST.get('nombre')
-        libro_nuevo.autor = request.POST.get('autor')
-        libro_nuevo.fecha_publicacion = request.POST.get('fecha')
+        editarLibro = Libro()
+        editarLibro.id = id
+        editarLibro.img = request.POST.get('img')
+        editarLibro.nombre = request.POST.get('nombre')
+        editarLibro.autor = request.POST.get('autor')
+        editarLibro.fecha_publicacion = request.POST.get('fecha')
 
-        Libro.save(libro_nuevo)
+        Libro.save(editarLibro)
 
         return redirect(index)
+
+def borrar_libro(request, id):
+    libro = Libro.objects.get(id=id)
+    if libro is not None:
+        Libro.delete(libro)
+
+    return redirect(index)

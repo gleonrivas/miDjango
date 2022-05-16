@@ -80,7 +80,7 @@
                     <input type="date" id="fecha" name="fecha" value="">
                 </div>
 
-                <input class="submit-btn" type="submit" value="Crear">
+                <input class="submit-btn" type="submit" value="Create">
 
             </form>
         </div>
@@ -95,13 +95,14 @@
                         <p class="p1">{{ libro.nombre }}</p>
                         <p class="p2">{{ libro.autor }}</p>
                         <p class="p2">Published on {{ libro.fecha_publicacion }}</p>
-                    </div>
-                    <div class="btn-area">
-                        <button class="b1" type="button" onclick={{ editar_libro }}>Modify</button>
-                        <button class="b2" type="button" onclick={{ editar_libro }}>Delete</button>
-                    </div>
+                        <div class="btn-area">
+                             <a class="b1" href="edit_book/{{libro.id}}">Modify</a>
+                             <a class="b2" href="delete_book/{{libro.id}}">Delete</a>
+                        </div>
 
+                    </div>
                 </div>
+
             </div>
         {% endfor %}
     </div>

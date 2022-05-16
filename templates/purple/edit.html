@@ -6,7 +6,7 @@
 
     {% load static %}
 
-    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/edit.css' %}">
 </head>
 <body>
 
@@ -14,7 +14,7 @@
 
         <div class="header-div">
 
-            <p class="header-p"><a href="{{ index }}">Infinite's Bookstore</a></p>
+            <p class="header-p"><a href="/{{index}}">Infinite's Bookstore</a></p>
 
             <div class="header-panel">
                 <ul class="short-menu">
@@ -24,12 +24,59 @@
                 </ul>
             </div>
         </div>
+    </div>
 
-        <div class="a1">
-            <img src="{{  }}" alt="">
+
+    <div class="container">
+        <div class="container1">
+            <img src="{{ libro.img }}" alt="">
+            <div class="subcontainer1">
+                <p class="p1">{{ libro.nombre }}</p>
+                <p class="p2">Author: {{ libro.autor }}</p>
+                <p class="p2">Published on {{ libro.fecha_publicacion }}</p>
+            </div>
+
+        </div>
+
+        <div class="container2">
+            <form class="formulario" action="/edit_book/{{libro.id}}" method="post">
+
+                {% csrf_token %}
+
+                <div class="div-form">
+                    <label for="id">ID:</label>
+                    <input type="number" id="id" name="id" disabled value="{{ libro.id }}">
+                </div>
+
+                <div class="div-form">
+                    <label for="img">Image URL:</label>
+                    <input type="url" id="img" name="img" value="{{ libro.img }}">
+                </div>
+
+                <div class="div-form">
+                    <label for="nombre">Name:</label>
+                    <input type="text" id="nombre" name="nombre" value="{{ libro.nombre }}">
+                </div>
+
+                <div class="div-form">
+                    <label for="autor">Author:</label>
+                    <input type="text" id="autor" name="autor" value="{{ libro.autor }}">
+                </div>
+
+                <div class="div-form">
+                    <label for="fecha">Publishing date:</label>
+                    <input type="date" id="fecha" name="fecha" value="{{libro.fecha_publicacion}}">
+                </div>
+
+                <input class="submit-btn" type="submit" value="Update">
+
+            </form>
         </div>
 
 
-    </div>
+
+        </div>
+
+
 </body>
 </html>
